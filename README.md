@@ -109,12 +109,21 @@ npm install react-router-dom
 
 [https://axios-http.com](https://axios-http.com/ru/docs/intro)
 
-Встановлення:
-
 ```
 $ npm install axios
 ```
 
-## Start
+### react-loader-spinner
+
+[https://react-loader-spinner](https://github.com/mhnpd/react-loader-spinner)
+[https://react-loader-spinner/color-ring](https://mhnpd.github.io/react-loader-spinner/docs/components/color-ring)
+
+```
+npm install react-loader-spinner --save
+```
+
+---
+
+# Виконання
 
 Створення стрінок (`pages`) => `rafce`

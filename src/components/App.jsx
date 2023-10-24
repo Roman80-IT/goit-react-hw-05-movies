@@ -9,11 +9,12 @@ import Reviews from 'pages/Reviews';
 export const App = () => {
   return (
     <Routes>
-      <Route path="/" component={Home} />
-      <Route path="/movies" component={Movies} />
-      <Route path="/movies/:movieId" component={MovieDetails} />
-      <Route path="/movies/:movieId/cast" component={Cast} />
-      <Route path="/movies/:movieId/reviews" component={Reviews} />
+      {/* <Route path="/" component={Home} /> */}
+      <Route path="/" element={<Home />} />
+      <Route path="/movies" element={<Movies />} />
+      <Route path="/movies/:movieId" element={<MovieDetails />} />
+      <Route path="/movies/:movieId/cast" element={<Cast />} />
+      <Route path="/movies/:movieId/reviews" element={<Reviews />} />
     </Routes>
   );
 };
