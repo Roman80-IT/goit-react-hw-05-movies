@@ -36,7 +36,6 @@ const Home = () => {
     <>
       {loading && <Loader />}
       {error && <ErrorMessage message={error} />}
-
       <h1>Trend of day</h1>
       <MovieList movies={movies} />
     </>
@@ -44,11 +43,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// import React from 'react';
-
-// const Home = () => {
-//   return <div>Home</div>;
-// };
-
-// export default Home;

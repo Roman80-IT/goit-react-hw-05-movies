@@ -122,6 +122,18 @@ $ npm install axios
 npm install react-loader-spinner --save
 ```
 
+### react-icons
+
+```
+npm install react-icons
+```
+
+### react-hot-toast
+
+```
+npm install react-hot-toast
+```
+
 ---
 
 # Виконання
