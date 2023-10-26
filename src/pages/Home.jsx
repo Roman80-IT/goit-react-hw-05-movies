@@ -3,6 +3,7 @@ import { Loader } from 'components/Loader';
 
 import MovieList from 'components/MovieList/MovieList';
 import ErrorMessage from 'components/ErrorMessage';
+import { Wrapper, Title } from 'components/GeneralStyled/General.styled';
 
 import { getTrendingMovies } from 'services/api';
 
@@ -33,12 +34,14 @@ const Home = () => {
   console.log('Movies:', movies);
 
   return (
-    <>
+    <Wrapper>
       {loading && <Loader />}
       {error && <ErrorMessage message={error} />}
-      <h1>Trend of day</h1>
-      <MovieList movies={movies} />
-    </>
+      <Title>Trend of day</Title>
+      <div>
+        <MovieList movies={movies} />
+      </div>
+    </Wrapper>
   );
 };
 
