@@ -5,18 +5,16 @@ export const MovieList = ({ movies }) => {
   const showMovies = Array.isArray(movies) && movies.length;
 
   return (
-    <div>
+    <div className="row g-4">
       {showMovies &&
         movies.map(movie => {
           return (
-            <div>
-              <MovieCard
-                key={movie.id}
-                id={movie.id}
-                poster_path={movie.poster_path}
-                title={movie.title}
-              />
-            </div>
+            <MovieCard
+              key={movie.id}
+              id={movie.id}
+              poster_path={movie.poster_path}
+              title={movie.title}
+            />
           );
         })}
     </div>

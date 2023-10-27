@@ -34,6 +34,13 @@ export const Title = styled.h2`
   color: #132b55;
 `;
 
+export const Title4 = styled.h4`
+  margin: 0px auto;
+
+  color: #132b55;
+  text-decoration: none;
+`;
+
 export const List = styled.ul`
   padding-left: 24px;
 
