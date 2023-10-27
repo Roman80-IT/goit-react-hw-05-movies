@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { getMoviesForQuery } from 'services/api';
 import { Loader } from 'components/Loader';
 import { MovieList } from 'components/MovieList/MovieList';
+import { Wrapper } from 'components/GeneralStyled/General.styled';
 import { Btn, Form, Input, Search } from './Movies.styled';
 
 const Movies = () => {
@@ -42,7 +43,7 @@ const Movies = () => {
   }, [query, setSearchParams]);
 
   return (
-    <div>
+    <Wrapper>
       <Form role="search" onSubmit={handleSubmit}>
         <Input
           type="search"
@@ -61,7 +62,7 @@ const Movies = () => {
       )}
 
       {movies.results?.length !== 0 && <MovieList movies={movies.results} />}
-    </div>
+    </Wrapper>
   );
 };
 

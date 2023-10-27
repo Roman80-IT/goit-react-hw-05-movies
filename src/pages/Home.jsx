@@ -38,7 +38,7 @@ const Home = () => {
       {loading && <Loader />}
       {error && <ErrorMessage message={error} />}
       <Title>Trend of day</Title>
-      <div>
+      <div className="row g-4">
         <MovieList movies={movies} />
       </div>
     </Wrapper>
