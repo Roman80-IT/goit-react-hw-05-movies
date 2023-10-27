@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useMemo, Suspense } from 'react';
+import React, { useEffect, useState, useMemo, Suspense, useRef } from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { Additional } from 'components/Additional/Additional';
 import { getMoviesDetails } from 'services/api';
 import {
-  Arrow,
-  Back,
+  // Arrow,
+  // Back,
   Details,
   List,
   Poster,
@@ -13,21 +13,24 @@ import {
 } from './MovieDetailsPage.styled';
 import { Wrapper, Title } from 'components/GeneralStyled/General.styled';
 import { Loader } from 'components/Loader';
+import { Back } from 'components/Back/Back';
 
 const BASE_URL = 'https://image.tmdb.org/t/p/w500';
 const DEFAULT_IMG =
   'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
 
 const MovieDetails = () => {
-  const { movieId } = useParams();
-  const location = useLocation();
-
   const [moviesDetail, setMoviesDetail] = useState(null); // null
   const [loading, setLoading] = useState(true);
+
+  const { movieId } = useParams();
+  const location = useLocation();
+  const backLinkLocationRef = useRef(location.state?.from ?? '/movies');
 
   useEffect(() => {
     async function getDetails() {
       try {
+        setLoading(true);
         const response = await getMoviesDetails(movieId);
         // console.log('Data from API:', response); // Вивести дані, отримані з API
         setMoviesDetail(response);
@@ -56,9 +59,9 @@ const MovieDetails = () => {
   return (
     <div>
       <Wrapper>
-        <Back to={location.state ?? '/'}>
-          <Arrow /> Go back
-        </Back>
+        <Back backLinkLocationRef={backLinkLocationRef.current} />
+        {/* <Arrow /> Go back */}
+        {/* </Back> */}
         {moviesDetail && ( // Замість moviesDetail.length !== 0
           <Details>
             <Poster
@@ -95,3 +98,5 @@ const MovieDetails = () => {
 };
 
 export default MovieDetails;
+
+// to={location.state ?? '/'}

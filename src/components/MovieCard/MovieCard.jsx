@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Title4 } from 'components/GeneralStyled/General.styled';
 import styled from 'styled-components';
 
@@ -11,12 +12,12 @@ const NoUnderlineLink = styled(Link)`
 `;
 
 const MovieCard = ({ id, poster_path, title }) => {
-  // const location = useLocation();
+  const location = useLocation();
 
   return (
     <div className="col-lg-3 col-md-4 col-sm-6 col-12">
       <div className="card h-100">
-        <Link to={`/movies/${id}`}>
+        <Link to={`/movies/${id}`} state={{ from: location }}>
           <img
             src={poster_path ? `${BASE_URL}${poster_path}` : DEFAULT_IMG}
             className="card-img-top"
@@ -24,8 +25,7 @@ const MovieCard = ({ id, poster_path, title }) => {
           />
         </Link>
         <div className="card-body">
-          <NoUnderlineLink to={`/movies/${id}`}>
-            {/* <h5 className="card-title">{title}</h5> */}
+          <NoUnderlineLink to={`/movies/${id}`} state={{ from: location }}>
             <Title4 className="card-title">{title}</Title4>
           </NoUnderlineLink>
         </div>
