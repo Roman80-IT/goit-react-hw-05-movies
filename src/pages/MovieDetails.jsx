@@ -1,19 +1,14 @@
 import React, { useEffect, useState, useMemo, Suspense, useRef } from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import { Additional } from 'components/Additional/Additional';
-import { getMoviesDetails } from 'services/api';
-import {
-  // Arrow,
-  // Back,
-  Details,
-  List,
-  Poster,
-  SubTitle,
-} from './MovieDetailsPage.styled';
-import { Wrapper, Title } from 'components/GeneralStyled/General.styled';
+
 import { Loader } from 'components/Loader';
+import { Additional } from 'components/Additional/Additional';
 import { Back } from 'components/Back/Back';
+
+import { getMoviesDetails } from 'services/api';
+import { Details, List, Poster, SubTitle } from './MovieDetailsPage.styled';
+import { Wrapper, Title } from 'components/GeneralStyled/General.styled';
 
 const BASE_URL = 'https://image.tmdb.org/t/p/w500';
 const DEFAULT_IMG =
@@ -60,8 +55,7 @@ const MovieDetails = () => {
     <div>
       <Wrapper>
         <Back backLinkLocationRef={backLinkLocationRef.current} />
-        {/* <Arrow /> Go back */}
-        {/* </Back> */}
+
         {moviesDetail && ( // Замість moviesDetail.length !== 0
           <Details>
             <Poster
