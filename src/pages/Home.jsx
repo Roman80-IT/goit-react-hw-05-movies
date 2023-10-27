@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Loader } from 'components/Loader';
 
 import MovieList from 'components/MovieList/MovieList';
-import ErrorMessage from 'components/ErrorMessage';
+import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
 import { Wrapper, Title } from 'components/GeneralStyled/General.styled';
 
 import { getTrendingMovies } from 'services/api';
@@ -20,7 +20,7 @@ const Home = () => {
 
         setTrendingList(moviesList);
       } catch (error) {
-        console.log(error.massage);
+        // console.log(error.message);
 
         setError(error.message);
       } finally {
@@ -31,7 +31,7 @@ const Home = () => {
     getTrendsMovies();
   }, []);
 
-  console.log('Movies:', movies);
+  // console.log('Movies:', movies);
 
   return (
     <Wrapper>

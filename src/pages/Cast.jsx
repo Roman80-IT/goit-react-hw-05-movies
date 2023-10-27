@@ -7,7 +7,7 @@ import { CastCard } from 'components/MovieCard/CastCard';
 import { List } from './Cast.styled';
 import { Wrapper } from 'components/GeneralStyled/General.styled';
 import { Loader } from 'components/Loader';
-import ErrorMessage from 'components/ErrorMessage';
+import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -29,7 +29,7 @@ const Cast = () => {
 
         scrollToAdditional();
       } catch (error) {
-        console.log(error.massage);
+        // console.log(error.message);
 
         setError(error.message);
       } finally {

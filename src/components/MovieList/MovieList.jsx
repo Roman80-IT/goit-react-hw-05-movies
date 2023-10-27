@@ -1,7 +1,7 @@
 import MovieCard from 'components/MovieCard/MovieCard';
 
 export const MovieList = ({ movies }) => {
-  console.log('movies in MovieList: ', movies);
+  // console.log('movies in MovieList: ', movies);
   const showMovies = Array.isArray(movies) && movies.length;
 
   return (

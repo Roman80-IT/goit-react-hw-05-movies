@@ -60,3 +60,18 @@ export const getCast = async movieId => {
 };
 
 ///////////////////////////////////
+
+// export async function getReviews(movieId) {
+//   return axios.get(
+//     `${BASE_URL}/movie/${movieId}/reviews?language=en-US&api_key=${API_KEY}`,
+//   );
+// }
+
+export const getReviews = async movieId => {
+  const { data } = await axios.get(
+    `${BASE_URL}/movie/${movieId}/reviews?language=en-US&api_key=${API_KEY}`
+  );
+  console.log('getReviews (data):', data);
+  console.log('getReviews (data.results):', data.results);
+  return data.results;
+};
