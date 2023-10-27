@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Title } from 'components/GeneralStyled/General.styled';
 
 const BASE_URL = 'https://image.tmdb.org/t/p/w500';
 const DEFAULT_IMG =
@@ -14,7 +15,7 @@ const MovieCard = ({ id, poster_path, title }) => {
             alt={title}
           />
         }
-        <h2>{title}</h2>
+        <Title>{title}</Title>
       </Link>
     </div>
   );

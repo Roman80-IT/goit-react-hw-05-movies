@@ -7,21 +7,17 @@ import {
 } from './Additional.styled';
 import { Wrapper } from 'components/GeneralStyled/General.styled';
 
-export const Additional = ({ backLocation, setCoordinate }) => {
+export const Additional = () => {
   return (
     <Container>
       <Wrapper>
         <Title>Additional information</Title>
         <List>
           <ListItem>
-            <StyledLink to="cast" state={backLocation}>
-              Cast
-            </StyledLink>
+            <StyledLink to="cast">Cast</StyledLink>
           </ListItem>
           <ListItem>
-            <StyledLink to="reviews" state={backLocation}>
-              Reviews
-            </StyledLink>
+            <StyledLink to="reviews">Reviews</StyledLink>
           </ListItem>
         </List>
       </Wrapper>
